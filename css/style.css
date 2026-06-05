@@ -161,3 +161,32 @@ textarea::placeholder {
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     margin: 2rem 0 1rem 0;
 }
+
+.call-to-action {
+    background-color: var(--azul-hielo-pastel); 
+}
+
+.call-to-action .small-text {
+    font-size: 0.95rem;
+    color: #1a1a1a !important;
+}
+
+.call-to-action .custom-btn {
+    color: var(--azul-rey-profundo) !important;
+    border-color: var(--azul-rey-profundo)  !important;
+    border-radius: 10px !important;
+    background-color: white;
+    font-weight: 500;
+    padding: 0.4rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.call-to-action .custom-btn:hover {
+    background-color: var(--azul-rey-profundo)  !important;
+    color: white !important;
+}
+
+.phone:hover{
+    filter: drop-shadow(0 0 10px var(--azul-rey-profundo) );
+    transform: scale(1.05);
+}
