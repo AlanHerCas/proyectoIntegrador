@@ -190,3 +190,28 @@ textarea::placeholder {
     filter: drop-shadow(0 0 10px var(--azul-rey-profundo) );
     transform: scale(1.05);
 }
+
+
+.valores-section {
+    background-color: var(--azul-hielo-pastel);
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+    font-family: var(--font-main);
+
+}
+
+.valores{
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    border : 1px solid transparent;
+    background-color: #ffffff86;
+    margin: 0.2rem;
+}
+
+.lista-valores{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 1rem;
+}
