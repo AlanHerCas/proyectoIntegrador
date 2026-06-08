@@ -308,6 +308,12 @@ h1{
     color: white !important;
 }
 
+.phone {
+    max-width: 150px;
+    height: auto;
+    transition: all 0.3s ease;
+}
+
 .phone:hover{
     filter: drop-shadow(0 0 10px var(--azul-rey-profundo) );
     transform: scale(1.05);
@@ -340,19 +346,19 @@ a.btn-custom.active-nav-item {
     font-family: var(--font-main);
 }
 
-.valores{
+.valor-card {
     transition: all 0.3s ease;
     border-radius: 10px;
-    border : 1px solid transparent;
+    border: 1px solid transparent;
     background-color: #ffffff86;
-    margin: 0.2rem;
+    height: 100%;
 }
 
-.lista-valores{
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    gap: 1rem;
+.valor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    background-color: #ffffffd0;
+    border-color: var(--azul-rey-profundo);
 }
 
 /* SECCIÓN EQUIPO */
@@ -470,4 +476,46 @@ a.btn-custom.active-nav-item {
     line-height: 1.5;
     font-size: 0.9rem;
     color: #333;
+}
+
+/* SECCIÓN MISIÓN Y VISIÓN */
+.mision-vision-section {
+    background-color: #C4E2F5;
+}
+
+.custom-card {
+    background-color: #ffffff;
+    border-radius: 1.25rem !important;
+    box-shadow: 0 0.25rem 0.7rem rgba(0,0,0,0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.custom-card:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 0.75rem 1.5rem rgba(0,0,0,0.1) !important;
+}
+
+.custom-card h3 {
+    color: #2C5EAD;
+    font-size: 1.35rem;
+}
+
+.img-mision {
+    object-fit: cover;
+    width: 100%;
+    height: 16rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,0.03);
+}
+
+.stat-number {
+    color: #1591DC;
+    font-size: 1.8rem;
+}
+
+.extra-small {
+    font-size: 0.85rem;
+    display: block;
+    line-height: 1.2;
+    color: #4a5568;
 }

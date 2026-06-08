@@ -6,9 +6,9 @@ export function renderValores() {
                     Nuestros valores
                 </h2>
 
-                <div class="lista-valores">
+                <div class="row g-4 justify-content-center">
                     <!-- Valor 1 -->
-                    <div class="col-12 col-md-6 col-lg-3 valores">
+                    <div class="col-12 col-md-6 col-lg-3">
                         <div class="valor-card text-center p-4 h-100">
                             <div class="icon-container">
                                 <img src="./assets/Confianza.svg" alt="Confianza" width="64" height="64">
@@ -21,7 +21,7 @@ export function renderValores() {
                     </div>
 
                     <!-- Valor 2 -->
-                    <div class="col-12 col-md-6 col-lg-3 valores">
+                    <div class="col-12 col-md-6 col-lg-3">
                         <div class="valor-card text-center p-4 h-100">
                             <div class="icon-container">
                                 <img src="./assets/Compromiso.svg" alt="Compromiso" width="64" height="64">
@@ -34,7 +34,7 @@ export function renderValores() {
                     </div>
 
                     <!-- Valor 3 -->
-                    <div class="col-12 col-md-6 col-lg-3 valores">
+                    <div class="col-12 col-md-6 col-lg-3">
                         <div class="valor-card text-center p-4 h-100">
                             <div class="icon-container">
                                 <img src="./assets/transparenia.svg" alt="Transparencia" width="64" height="64">
@@ -47,7 +47,7 @@ export function renderValores() {
                     </div>
 
                     <!-- Valor 4 -->
-                    <div class="col-12 col-md-6 col-lg-3 valores">
+                    <div class="col-12 col-md-6 col-lg-3">
                         <div class="valor-card text-center p-4 h-100">
                             <div class="icon-container">
                                 <img src="./assets/respeto.svg" width="64" height="64" alt="Respeto">
