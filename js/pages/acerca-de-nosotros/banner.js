@@ -18,7 +18,7 @@ export function renderBanner() {
                 </p>
             </div>
             <div class="imagen">
-                <img src="./assets/banner.png" alt="Servicio">
+                <img src="../assets/banner.png" alt="Servicio">
             </div>
         </section>
     `;

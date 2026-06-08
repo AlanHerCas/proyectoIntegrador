@@ -6,7 +6,7 @@ export function renderMision() {
                     <div class="col-12 col-md-7">
                         <div class="row align-items-center h-100 g-3">
                             <div class="col-12 col-sm-4 text-center">
-                                <img src="assets/carpintero.jpg" alt="profesional trabajando" class="img-fluid rounded-4 img-mision">
+                                <img src="../assets/carpintero.jpg" alt="profesional trabajando" class="img-fluid rounded-4 img-mision">
                             </div>
                             <div class="col-12 col-sm-8 h-100">
                                 <div class="card h-100 border-0 p-4 custom-card d-flex justify-content-center">
