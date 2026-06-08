@@ -1,7 +1,7 @@
 import './navBar.js';
 import { renderInicioPage } from './pages/inicio/inicio.js';
 import { renderListaProductosPage } from './pages/lista-productos/listaProductos.js';
-import { renderAcercaPage } from './pages/acerca-de-nosotros/acerca.js';
+import { renderAcercaPage, initAcercaPage } from './pages/acerca-de-nosotros/acerca.js';
 import { renderContactoPage } from './pages/contacto/contacto.js';
 import { renderLoginPage } from './pages/login/login.js';
 import { renderRegistroPage } from './pages/registro/registro.js';
@@ -14,7 +14,7 @@ const mainContent = document.getElementById('main-content');
 const routes = {
     '#inicio': renderInicioPage,
     '#buscar': renderListaProductosPage,
-    '#acerca': renderAcercaPage,
+    '#acerca': { render: renderAcercaPage, init: initAcercaPage },
     '#contacto': renderContactoPage,
     '#login': renderLoginPage,
     '#registro': renderRegistroPage,
@@ -26,8 +26,16 @@ function router() {
     const hash = window.location.hash || '#inicio';
     
     // 1. Renderizar el contenido correspondiente de la ruta activa
-    if (routes[hash]) {
-        mainContent.innerHTML = routes[hash]();
+    const route = routes[hash];
+    if (route) {
+        if (typeof route === 'function') {
+            mainContent.innerHTML = route();
+        } else {
+            mainContent.innerHTML = route.render();
+            if (route.init) {
+                route.init();
+            }
+        }
     } else {
         // Ruta no encontrada, redirigir a inicio
         window.location.hash = '#inicio';

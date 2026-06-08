@@ -1,7 +1,7 @@
 import { renderBanner } from './banner.js';
 import { renderValores } from './valores.js';
 import { renderMision } from './mision.js';
-import { renderEquipo } from './equipo.js';
+import { renderEquipo, initEquipo } from './equipo.js';
 import { renderCallToAction } from './calltoaction.js';
 
 export function renderAcercaPage() {
@@ -15,3 +15,8 @@ export function renderAcercaPage() {
         </div>
     `;
 }
+
+export function initAcercaPage() {
+    initEquipo();
+}
+
