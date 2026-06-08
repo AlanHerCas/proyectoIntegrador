@@ -1,6 +1,6 @@
 export function renderCallToAction() {
     return `
-        <section class="call-to-action py-4 px-3 my-4">
+        <section class="call-to-action py-5 px-3">
             <div class="container-fluid">
                 <div class="row align-items-center text-center text-md-start">
                     <div class="col-12 col-md-3 d-flex justify-content-center justify-content-md-start">
