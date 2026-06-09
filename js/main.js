@@ -4,7 +4,8 @@ import { renderListaProductosPage } from './pages/lista-productos/listaProductos
 import { renderAcercaPage, initAcercaPage } from './pages/acerca-de-nosotros/acerca.js';
 import { renderContactoPage } from './pages/contacto/contacto.js';
 import { renderLoginPage } from './pages/login/login.js';
-import { renderRegistroPage } from './pages/registro/registro.js';
+import { renderRegistroPage, initRegistroPage } from './pages/registro/registro.js';
+import { renderRegistroUsuarioPage, initRegistroUsuarioPage } from './pages/registro/registroUsuario.js';
 import { renderRegistroProfesionalPage } from './pages/registro-profesionales/registroProfesional.js';
 import { renderCrearPublicacionPage } from './pages/crear-publicacion/crearPublicacion.js';
 
@@ -17,7 +18,8 @@ const routes = {
     '#acerca': { render: renderAcercaPage, init: initAcercaPage },
     '#contacto': renderContactoPage,
     '#login': renderLoginPage,
-    '#registro': renderRegistroPage,
+    '#registro': { render: renderRegistroPage, init: initRegistroPage },
+    '#registro-usuario': { render: renderRegistroUsuarioPage, init: initRegistroUsuarioPage },
     '#registro-profesional': renderRegistroProfesionalPage,
     '#crear-publicacion': renderCrearPublicacionPage
 };
