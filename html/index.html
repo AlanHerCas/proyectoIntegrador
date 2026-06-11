@@ -108,6 +108,7 @@
     <script>
         function sendMail(){
             document.getElementById('btn-submit-text').toggleAttribute('disabled')
+            const supportForm = document.getElementById('support-form')
             let params = {
                 user_name: document.getElementById('user_name').value,
                 subject: document.getElementById('subject').value,
@@ -118,6 +119,9 @@
             emailjs.send('service_mb0n3yh', 'template_p35uln9', params).then(() => {
                 alert('Mensaje enviado!');
                 document.getElementById('btn-submit-text').toggleAttribute('disabled')
+                if (supportForm) {
+                    supportForm.reset()
+                }
             })
         }
         </script>

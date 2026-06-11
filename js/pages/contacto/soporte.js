@@ -48,7 +48,7 @@ export function renderSoporte() {
                 <div class="soporte-form-container">
                     <h2>Envíanos un mensaje</h2>
 
-                    <form onsubmit="event.preventDefault(); sendMail();">
+                    <form id="support-form" onsubmit="event.preventDefault(); sendMail();">
                         <div class="form-row-double">
                             <div class="form-field-group">
                                 <label for="user_name">Nombre completo</label>
