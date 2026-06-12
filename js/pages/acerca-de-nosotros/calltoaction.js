@@ -4,7 +4,7 @@ export function renderCallToAction() {
             <div class="container-fluid">
                 <div class="row align-items-center text-center text-md-start">
                     <div class="col-12 col-md-3 d-flex justify-content-center align-self-end">
-                        <img src="../assets/phone_FYNDR.svg" alt="Mockup Celular Fyndr" class="img-fluid phone">
+                        <img src="assets/phone_FYNDR.svg" alt="Mockup Celular Fyndr" class="img-fluid phone">
                     </div>
 
                     <div class="col-12 col-md-6 text-center mb-3 mb-md-0">

@@ -45,7 +45,7 @@ export function renderFormulario() {
                                 </li>
                             </ul>
                             <div class="beneficio-img-container">
-                                <img src="../assets/trabajador_registro.png" alt="Trabajador" class="img-fluid beneficio-img">
+                                <img src="assets/trabajador_registro.png" alt="Trabajador" class="img-fluid beneficio-img">
                             </div>
                         </div>
                     </div>
@@ -145,7 +145,7 @@ export function initFormulario() {
     const nameRegex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s]{3,50}$/;
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&.])[A-Za-z\d@$!%*?&.]{8,}$/;
-    const phoneRegex = /^[0-9]{10}$/;
+    const phoneRegex = /^[2-9][0-9]{9}$/;
 
     const params = new URLSearchParams(window.location.search);
     if (params.has('social')) {
@@ -200,24 +200,78 @@ export function initFormulario() {
         } else {
             phoneInput.classList.remove('is-valid');
             phoneInput.classList.add('is-invalid');
-            phoneError.textContent = 'El teléfono debe tener exactamente 10 dígitos numéricos.';
+            phoneError.textContent = 'El teléfono debe tener 10 dígitos y comenzar con 2-9 (México).';
             return false;
         }
     }
 
     function validateEmail() {
-        const value = emailInput.value.trim();
-        if (emailRegex.test(value)) {
-            emailInput.classList.remove('is-invalid');
-            emailInput.classList.add('is-valid');
-            emailError.textContent = '';
-            return true;
-        } else {
-            emailInput.classList.remove('is-valid');
+        const val = emailInput.value.trim();
+        emailInput.classList.remove('is-valid', 'is-invalid');
+
+        if (!val) {
             emailInput.classList.add('is-invalid');
-            emailError.textContent = 'Introduce un correo electrónico válido.';
+            emailError.textContent = 'Introduce tu correo electrónico.';
             return false;
         }
+
+        if (!val.includes('@')) {
+            emailInput.classList.add('is-invalid');
+            emailError.textContent = 'El correo electrónico debe contener un símbolo "@".';
+            return false;
+        }
+
+        const parts = val.split('@');
+        if (parts.length !== 2) {
+            emailInput.classList.add('is-invalid');
+            emailError.textContent = 'El correo electrónico debe tener solo un símbolo "@".';
+            return false;
+        }
+
+        const localPart = parts[0];
+        const domainPart = parts[1];
+
+        if (!localPart) {
+            emailInput.classList.add('is-invalid');
+            emailError.textContent = 'Falta el usuario antes del símbolo "@".';
+            return false;
+        }
+
+        if (!domainPart) {
+            emailInput.classList.add('is-invalid');
+            emailError.textContent = 'Falta el dominio después del símbolo "@".';
+            return false;
+        }
+
+        if (!domainPart.includes('.')) {
+            emailInput.classList.add('is-invalid');
+            emailError.textContent = 'Al dominio le falta una extensión (ej. .com, .mx).';
+            return false;
+        }
+
+        const popularDomains = [
+            'gmail.com', 'hotmail.com', 'outlook.com',
+            'yahoo.com', 'yahoo.com.mx', 'live.com',
+            'icloud.com', 'live.com.mx'
+        ];
+
+        const lowerDomain = domainPart.toLowerCase();
+        if (!popularDomains.includes(lowerDomain)) {
+            emailInput.classList.add('is-invalid');
+            emailError.textContent = 'Utiliza un proveedor de correo popular (ej. gmail.com, hotmail.com).';
+            return false;
+        }
+
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (!emailRegex.test(val)) {
+            emailInput.classList.add('is-invalid');
+            emailError.textContent = 'Introduce un formato de correo electrónico válido.';
+            return false;
+        }
+
+        emailInput.classList.add('is-valid');
+        emailError.textContent = '';
+        return true;
     }
 
     function validatePassword() {
@@ -290,11 +344,11 @@ export function initFormulario() {
     });
 
     googleBtn.addEventListener('click', () => {
-        window.location.href = './google-mock.html';
+        window.location.href = 'html/google-mock.html';
     });
 
     facebookBtn.addEventListener('click', () => {
-        window.location.href = './facebook-mock.html';
+        window.location.href = 'html/facebook-mock.html';
     });
 
     form.addEventListener('submit', (e) => {

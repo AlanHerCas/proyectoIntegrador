@@ -56,16 +56,23 @@ export function renderSoporte() {
                                 <div class="error-msg" id="user_name_error"></div>
                             </div>
                             <div class="form-field-group">
-                                <label for="user_email">Correo electronico</label>
-                                <input type="email" id="user_email" name="user_email" placeholder="ejemplo@email.com" required>
-                                <div class="error-msg" id="user_email_error"></div>
+                                <label for="user_phone">Número de teléfono</label>
+                                <input type="tel" id="user_phone" name="user_phone" placeholder="10 dígitos (ej. 5512345678)" required>
+                                <div class="error-msg" id="user_phone_error"></div>
                             </div>
                         </div>
 
-                        <div class="form-field-group">
-                            <label for="subject">Asunto</label>
-                            <input type="text" id="subject" name="subject" placeholder="¿En qué podemos ayudarte?" required>
-                            <div class="error-msg" id="subject_error"></div>
+                        <div class="form-row-double">
+                            <div class="form-field-group">
+                                <label for="user_email">Correo electrónico</label>
+                                <input type="email" id="user_email" name="user_email" placeholder="ejemplo@email.com" required>
+                                <div class="error-msg" id="user_email_error"></div>
+                            </div>
+                            <div class="form-field-group">
+                                <label for="subject">Asunto</label>
+                                <input type="text" id="subject" name="subject" placeholder="¿En qué podemos ayudarte?" required>
+                                <div class="error-msg" id="subject_error"></div>
+                            </div>
                         </div>
 
                         <div class="form-field-group">
@@ -100,19 +107,21 @@ export function renderSoporte() {
 export function initSoporte() {
     const form = document.getElementById('support-form');
     const nameInput = document.getElementById('user_name');
+    const phoneInput = document.getElementById('user_phone');
     const emailInput = document.getElementById('user_email');
     const subjectInput = document.getElementById('subject');
     const messageInput = document.getElementById('message');
 
     const nameError = document.getElementById('user_name_error');
+    const phoneError = document.getElementById('user_phone_error');
     const emailError = document.getElementById('user_email_error');
     const subjectError = document.getElementById('subject_error');
     const messageError = document.getElementById('message_error');
 
-    if (!form || !nameInput || !emailInput || !subjectInput || !messageInput) return;
+    if (!form || !nameInput || !phoneInput || !emailInput || !subjectInput || !messageInput) return;
 
     const nameRegex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s]{3,50}$/;
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const phoneRegex = /^[2-9][0-9]{9}$/;
 
     function validateName() {
         const val = nameInput.value.trim();
@@ -129,19 +138,88 @@ export function initSoporte() {
         }
     }
 
-    function validateEmail() {
-        const val = emailInput.value.trim();
-        if (emailRegex.test(val)) {
-            emailInput.classList.remove('is-invalid');
-            emailInput.classList.add('is-valid');
-            emailError.textContent = '';
+    function validatePhone() {
+        const cleanVal = phoneInput.value.replace(/[\s\-\(\)]/g, '');
+        if (phoneRegex.test(cleanVal)) {
+            phoneInput.classList.remove('is-invalid');
+            phoneInput.classList.add('is-valid');
+            phoneError.textContent = '';
             return true;
         } else {
-            emailInput.classList.remove('is-valid');
-            emailInput.classList.add('is-invalid');
-            emailError.textContent = 'Introduce un correo electrónico válido.';
+            phoneInput.classList.remove('is-valid');
+            phoneInput.classList.add('is-invalid');
+            phoneError.textContent = 'El teléfono debe tener 10 dígitos y comenzar con 2-9 (México).';
             return false;
         }
+    }
+
+    function validateEmail() {
+        const val = emailInput.value.trim();
+        emailInput.classList.remove('is-valid', 'is-invalid');
+        
+        if (!val) {
+            emailInput.classList.add('is-invalid');
+            emailError.textContent = 'Introduce tu correo electrónico.';
+            return false;
+        }
+
+        if (!val.includes('@')) {
+            emailInput.classList.add('is-invalid');
+            emailError.textContent = 'El correo electrónico debe contener un símbolo "@".';
+            return false;
+        }
+
+        const parts = val.split('@');
+        if (parts.length !== 2) {
+            emailInput.classList.add('is-invalid');
+            emailError.textContent = 'El correo electrónico debe tener solo un símbolo "@".';
+            return false;
+        }
+
+        const localPart = parts[0];
+        const domainPart = parts[1];
+
+        if (!localPart) {
+            emailInput.classList.add('is-invalid');
+            emailError.textContent = 'Falta el usuario antes del símbolo "@".';
+            return false;
+        }
+
+        if (!domainPart) {
+            emailInput.classList.add('is-invalid');
+            emailError.textContent = 'Falta el dominio después del símbolo "@".';
+            return false;
+        }
+
+        if (!domainPart.includes('.')) {
+            emailInput.classList.add('is-invalid');
+            emailError.textContent = 'Al dominio le falta una extensión (ej. .com, .mx).';
+            return false;
+        }
+
+        const popularDomains = [
+            'gmail.com', 'hotmail.com', 'outlook.com', 
+            'yahoo.com', 'yahoo.com.mx', 'live.com', 
+            'icloud.com', 'live.com.mx'
+        ];
+        
+        const lowerDomain = domainPart.toLowerCase();
+        if (!popularDomains.includes(lowerDomain)) {
+            emailInput.classList.add('is-invalid');
+            emailError.textContent = 'Utiliza un proveedor de correo popular (ej. gmail.com, hotmail.com).';
+            return false;
+        }
+
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (!emailRegex.test(val)) {
+            emailInput.classList.add('is-invalid');
+            emailError.textContent = 'Introduce un formato de correo electrónico válido.';
+            return false;
+        }
+
+        emailInput.classList.add('is-valid');
+        emailError.textContent = '';
+        return true;
     }
 
     function validateSubject() {
@@ -175,16 +253,19 @@ export function initSoporte() {
     }
 
     nameInput.addEventListener('input', validateName);
+    phoneInput.addEventListener('input', validatePhone);
     emailInput.addEventListener('input', validateEmail);
     subjectInput.addEventListener('input', validateSubject);
     messageInput.addEventListener('input', validateMessage);
 
     form.addEventListener('reset', () => {
         nameInput.classList.remove('is-valid', 'is-invalid');
+        phoneInput.classList.remove('is-valid', 'is-invalid');
         emailInput.classList.remove('is-valid', 'is-invalid');
         subjectInput.classList.remove('is-valid', 'is-invalid');
         messageInput.classList.remove('is-valid', 'is-invalid');
         nameError.textContent = '';
+        phoneError.textContent = '';
         emailError.textContent = '';
         subjectError.textContent = '';
         messageError.textContent = '';
@@ -193,11 +274,12 @@ export function initSoporte() {
     form.addEventListener('submit', (e) => {
         e.preventDefault();
         const isNameValid = validateName();
+        const isPhoneValid = validatePhone();
         const isEmailValid = validateEmail();
         const isSubjectValid = validateSubject();
         const isMessageValid = validateMessage();
 
-        if (isNameValid && isEmailValid && isSubjectValid && isMessageValid) {
+        if (isNameValid && isPhoneValid && isEmailValid && isSubjectValid && isMessageValid) {
             if (typeof window.sendMail === 'function') {
                 window.sendMail();
             }
