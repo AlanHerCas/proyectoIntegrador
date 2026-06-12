@@ -1,5 +1,5 @@
 import { renderBanner } from './banner.js';
-import { renderSoporte } from './soporte.js';
+import { renderSoporte, initSoporte } from './soporte.js';
 
 export function renderContactoPage() {
     return `
@@ -8,4 +8,8 @@ export function renderContactoPage() {
             ${renderSoporte()}
         </div>
     `;
+}
+
+export function initContactoPage() {
+    initSoporte();
 }

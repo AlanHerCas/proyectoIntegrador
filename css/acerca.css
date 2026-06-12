@@ -119,6 +119,8 @@ h1{
     max-width: 150px;
     height: auto;
     transition: all 0.3s ease;
+    margin-bottom: 0;
+    display: block;
 }
 .phone:hover{
     filter: drop-shadow(0 0 10px var(--azul-rey-profundo) );
@@ -197,6 +199,23 @@ h1{
     font-size: 0.85rem;
     text-align: center;
     padding: 0 15px;
+}
+.btn-ver-mas {
+    background-color: var(--azul-rey-profundo);
+    color: #ffffff;
+    border: none;
+    border-radius: 20px;
+    padding: 6px 18px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    font-family: var(--font-main);
+}
+.btn-ver-mas:hover {
+    background-color: var(--azul-electrico);
+    transform: scale(1.05);
 }
 .modal {
     display: none;

@@ -80,6 +80,7 @@ export function initEquipo() {
             <img src="${m.foto}" alt="${m.nombre}">
             <h3>${m.nombre}</h3>
             <p>${m.puesto}</p>
+            <button class="btn-ver-mas">Ver más</button>
         `;
         tarjeta.addEventListener('click', () => {
             modalFoto.src = m.foto;
