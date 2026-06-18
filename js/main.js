@@ -27,7 +27,7 @@ const routes = {
 function router() {
     const hash = window.location.hash || '#inicio';
     
-    // 1. Renderizar el contenido correspondiente de la ruta activa
+    
     const route = routes[hash];
     if (route) {
         if (typeof route === 'function') {
@@ -39,15 +39,15 @@ function router() {
             }
         }
     } else {
-        // Ruta no encontrada, redirigir a inicio
+        
         window.location.hash = '#inicio';
         return;
     }
 
-    // 2. Resaltar enlace activo en la barra de navegación
+    
     updateActiveNavLink(hash);
 
-    // 3. Cerrar el menú desplegable en móviles tras navegar
+    
     closeNavbarOnMobile();
 }
 
@@ -66,7 +66,7 @@ function updateActiveNavLink(currentHash) {
 function closeNavbarOnMobile() {
     const navbarCollapse = document.getElementById('navbarContent');
     if (navbarCollapse && navbarCollapse.classList.contains('show')) {
-        // Si bootstrap está disponible globalmente
+        
         if (window.bootstrap && window.bootstrap.Collapse) {
             const bsCollapse = window.bootstrap.Collapse.getInstance(navbarCollapse) || new window.bootstrap.Collapse(navbarCollapse);
             bsCollapse.hide();
@@ -77,3 +77,4 @@ function closeNavbarOnMobile() {
 // Escuchar cambios de ruta y carga inicial de la página
 window.addEventListener('hashchange', router);
 window.addEventListener('load', router);
+
