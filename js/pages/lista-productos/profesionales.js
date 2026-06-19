@@ -219,7 +219,7 @@ function renderizarSegmento() {
         col.innerHTML = `
             <div class="card h-100 border text-start shadow-sm" style="border-radius: 8px; overflow: hidden;">
                 <div style="height: 180px; background-color: #eaeaea;" class="d-flex align-items-center justify-content-center">
-                    <img class="bi bi-person-fill text-secondary" style="font-size: 3.5rem;" src="${pro.img}" alt="foto_perfil">
+                    <img class="w-100 h-100" style="object-fit: cover; object-position: center;" src="${pro.img}" alt="foto_perfil">
                 </div>
                 <div class="card-body d-flex flex-column justify-content-between">
                     <div>
