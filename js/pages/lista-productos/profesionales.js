@@ -1,24 +1,24 @@
 const profesionalesData = [
-    { id: 1, nombre: "Juan Perez", servicio: "Plomería", calificacion: 4.9, resenas: 124, precio: 350, img: "./assets/juan.jpg" },
-    { id: 2, nombre: "Carlos Ramirez", servicio: "Electricidad", calificacion: 4.8, resenas: 98, precio: 400, img: "./assets/carlos.jpg" },
-    { id: 3, nombre: "Miguelina Torres", servicio: "Carpintería", calificacion: 4.9, resenas: 156, precio: 500, img: "./assets/miguelina.jpg" },
-    { id: 4, nombre: "Maria Lopez", servicio: "Limpieza", calificacion: 4.7, resenas: 86, precio: 300, img: "./assets/maria.jpg" },
-    { id: 5, nombre: "Luis Hernandez", servicio: "Pintura", calificacion: 4.8, resenas: 112, precio: 450, img: "./assets/luis.jpg" },
-    { id: 6, nombre: "Fernando Garcia", servicio: "Jardinería", calificacion: 4.6, resenas: 75, precio: 350, img: "./assets/fernando.jpg" },
-    { id: 7, nombre: "Roberto Gómez", servicio: "Plomería", calificacion: 4.5, resenas: 42, precio: 320, img: "./assets/roberto.jpg" },
-    { id: 8, nombre: "Alicia Díaz", servicio: "Electricidad", calificacion: 4.9, resenas: 110, precio: 420, img: "./assets/alicia.jpg" },
-    { id: 9, nombre: "Sonia Martínez", servicio: "Limpieza", calificacion: 4.8, resenas: 65, precio: 280, img: "./assets/sonia.jpg" },
-    { id: 10, nombre: "Pedro Infante", servicio: "Carpintería", calificacion: 4.4, resenas: 38, precio: 480, img: "./assets/pedro.jpg" },
-    { id: 11, nombre: "Ricardo Silva", servicio: "Pintura", calificacion: 4.7, resenas: 54, precio: 390, img: "./assets/ricardo.jpg" },
-    { id: 12, nombre: "Elena Rostova", servicio: "Jardinería", calificacion: 4.9, resenas: 93, precio: 370, img: "./assets/elena.jpg" },
-    { id: 13, nombre: "Hugo Sánchez", servicio: "Plomería", calificacion: 4.6, resenas: 29, precio: 360, img: "./assets/hugo.jpg" },
-    { id: 14, nombre: "Manuel Belgrano", servicio: "Electricidad", calificacion: 4.3, resenas: 19, precio: 310, img: "./assets/manuel.jpg" },
-    { id: 15, nombre: "Gabriela Mistral", servicio: "Limpieza", calificacion: 4.8, resenas: 74, precio: 330, img: "./assets/gabriela.jpg" },
-    { id: 16, nombre: "Jorge Luis", servicio: "Carpintería", calificacion: 4.7, resenas: 88, precio: 520, img: "./assets/jorge.jpg" },
-    { id: 17, nombre: "Andrés Calamaro", servicio: "Pintura", calificacion: 4.5, resenas: 31, precio: 410, img: "./assets/andres.jpg" },
-    { id: 18, nombre: "Beatriz Pinzón", servicio: "Jardinería", calificacion: 4.8, resenas: 47, precio: 340, img: "./assets/beatriz.jpg" },
-    { id: 19, nombre: "Tomás Alva", servicio: "Electricidad", calificacion: 4.9, resenas: 150, precio: 460, img: "./assets/tomas.jpg" },
-    { id: 20, nombre: "Clara Luna", servicio: "Limpieza", calificacion: 4.6, resenas: 52, precio: 290, img: "./assets/clara.jpg" }
+    { id: 1, nombre: "Juan Perez", servicio: "Plomería", calificacion: 4.9, resenas: 124, precio: 350, img: "./assets/juan.svg" },
+    { id: 2, nombre: "Carlos Ramirez", servicio: "Electricidad", calificacion: 4.8, resenas: 98, precio: 400, img: "./assets/carlos.svg" },
+    { id: 3, nombre: "Miguelina Torres", servicio: "Carpintería", calificacion: 4.9, resenas: 156, precio: 500, img: "./assets/miguelina.svg" },
+    { id: 4, nombre: "Maria Lopez", servicio: "Limpieza", calificacion: 4.7, resenas: 86, precio: 300, img: "./assets/maria.svg" },
+    { id: 5, nombre: "Luis Hernandez", servicio: "Pintura", calificacion: 4.8, resenas: 112, precio: 450, img: "./assets/luis.svg" },
+    { id: 6, nombre: "Fernando Garcia", servicio: "Jardinería", calificacion: 4.6, resenas: 75, precio: 350, img: "./assets/fernando.svg" },
+    { id: 7, nombre: "Roberto Gómez", servicio: "Plomería", calificacion: 4.5, resenas: 42, precio: 320, img: "./assets/roberto.svg" },
+    { id: 8, nombre: "Alicia Díaz", servicio: "Electricidad", calificacion: 4.9, resenas: 110, precio: 420, img: "./assets/alicia.svg" },
+    { id: 9, nombre: "Sonia Martínez", servicio: "Limpieza", calificacion: 4.8, resenas: 65, precio: 280, img: "./assets/sonia.svg" },
+    { id: 10, nombre: "Pedro Infante", servicio: "Carpintería", calificacion: 4.4, resenas: 38, precio: 480, img: "./assets/pedro.svg" },
+    { id: 11, nombre: "Ricardo Silva", servicio: "Pintura", calificacion: 4.7, resenas: 54, precio: 390, img: "./assets/ricardo.svg" },
+    { id: 12, nombre: "Elena Rostova", servicio: "Jardinería", calificacion: 4.9, resenas: 93, precio: 370, img: "./assets/elena.svg" },
+    { id: 13, nombre: "Hugo Sánchez", servicio: "Plomería", calificacion: 4.6, resenas: 29, precio: 360, img: "./assets/hugo.svg" },
+    { id: 14, nombre: "Manuel Belgrano", servicio: "Electricidad", calificacion: 4.3, resenas: 19, precio: 310, img: "./assets/manuel.svg" },
+    { id: 15, nombre: "Gabriela Mistral", servicio: "Limpieza", calificacion: 4.8, resenas: 74, precio: 330, img: "./assets/gabriela.svg" },
+    { id: 16, nombre: "Jorge Luis", servicio: "Carpintería", calificacion: 4.7, resenas: 88, precio: 520, img: "./assets/jorge.svg" },
+    { id: 17, nombre: "Andrés Calamaro", servicio: "Pintura", calificacion: 4.5, resenas: 31, precio: 410, img: "./assets/andres.svg" },
+    { id: 18, nombre: "Beatriz Pinzón", servicio: "Jardinería", calificacion: 4.8, resenas: 47, precio: 340, img: "./assets/beatriz.svg" },
+    { id: 19, nombre: "Tomás Alva", servicio: "Electricidad", calificacion: 4.9, resenas: 150, precio: 460, img: "./assets/tomas.svg" },
+    { id: 20, nombre: "Clara Luna", servicio: "Limpieza", calificacion: 4.6, resenas: 52, precio: 290, img: "./assets/clara.svg" }
 ];
 
 
@@ -219,7 +219,7 @@ function renderizarSegmento() {
         col.innerHTML = `
             <div class="card h-100 border text-start shadow-sm" style="border-radius: 8px; overflow: hidden;">
                 <div style="height: 180px; background-color: #eaeaea;" class="d-flex align-items-center justify-content-center">
-                    <i class="bi bi-person-fill text-secondary" style="font-size: 3.5rem;"></i>
+                    <img class="bi bi-person-fill text-secondary" style="font-size: 3.5rem;" src="${pro.img}" alt="foto_perfil">
                 </div>
                 <div class="card-body d-flex flex-column justify-content-between">
                     <div>
