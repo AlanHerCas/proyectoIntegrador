@@ -115,25 +115,32 @@ function inicializarLogicaProfesionales() {
     listaFiltradaActual = [...profesionalesData];
     profesionalesVisibles = 6;
 
-    
     renderizarSegmento();
+
+    const catMas = document.getElementById("cat-mas");
+    const catServices = document.querySelectorAll(".cat-service");
+
+    if (catMas) {
+        catMas.addEventListener("click", () => {
+            catServices.forEach(cat => cat.classList.remove("d-none"));
+            catMas.classList.add("d-none");
+        });
+    }
 
     const btnsCategoriasTop = document.querySelectorAll(".btn-categoria-top");
     btnsCategoriasTop.forEach(btn => {
         btn.addEventListener("click", () => {
             const categoria = btn.getAttribute("data-categoria");
-            const checkboxes = document.querySelectorAll(".chk-servicio");
 
+            const checkboxes = document.querySelectorAll(".chk-servicio");
             checkboxes.forEach(chk => {
-                if (categoria === "Todos" || categoria === "Más") {
-                    chk.checked = false; 
+                if (categoria === "Todos") {
+                    chk.checked = false;
                 } else {
-                    
                     chk.checked = (chk.value === categoria);
                 }
             });
 
-            
             ejecutarFlujoFiltrado();
         });
     });
@@ -142,12 +149,8 @@ function inicializarLogicaProfesionales() {
     const btnRelevantesTop = document.getElementById("btn-relevantes-top");
     if (btnRelevantesTop) {
         btnRelevantesTop.addEventListener("click", () => {
-            const selectCalificacion = document.getElementById("select-calificacion");
-            if (selectCalificacion) {
-                selectCalificacion.value = "4.8"; // Configura el filtro a 4.8 automáticamente
-            }
-            
-            ejecutarFlujoFiltrado();
+            listaFiltradaActual.sort((a, b) => b.calificacion - a.calificacion);
+            renderizarSegmento();
         });
     }
 

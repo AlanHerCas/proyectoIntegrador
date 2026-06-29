@@ -325,7 +325,7 @@
     width: 100%;
     height: 100%;
     z-index: 1;
-    background: linear-gradient(180deg, rgba(16, 28, 48, 0.45) 0%, rgba(16, 28, 48, 0.9) 100%);
+    background: linear-gradient(180deg, rgba(16, 28, 48, 0.7) 0%, rgba(16, 28, 48, 0.95) 100%);
     transition: background 0.4s ease;
 }
 
@@ -349,6 +349,8 @@
     margin-bottom: 1rem;
     text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
     letter-spacing: -0.5px;
+    color: var(--azul-electrico);
+    transition: color 0.4s ease;
 }
 
 .pane-text {
@@ -383,11 +385,15 @@
 }
 
 .split-pane:hover .pane-overlay {
-    background: linear-gradient(180deg, rgba(21, 145, 220, 0.3) 0%, rgba(16, 28, 48, 0.85) 100%);
+    background: linear-gradient(180deg, rgba(21, 145, 220, 0.5) 0%, rgba(16, 28, 48, 0.9) 100%);
 }
 
 .split-pane:hover .pane-content {
     transform: translateY(-10px);
+}
+
+.split-pane:hover .pane-title {
+    color: #ffffff;
 }
 
 .split-pane:hover .btn-choice {
