@@ -518,3 +518,29 @@ a.btn-custom.active-nav-item {
     line-height: 1.2;
     color: #4a5568;
 }
+
+
+/* PUBLICACION */
+
+.publication{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.infoService, .evidencias, .previa{
+    flex: 1;
+    margin: 10px;
+}
+
+.info, .evidencia, .vistaPrevia{
+    background-color: var(--azul-hielo-pastel);
+}
+
+.galery{
+    background-color: #ffffff93;
+}
+
+
+
+
