@@ -2,9 +2,10 @@ import './navBar.js';
 import { renderInicioPage } from './pages/inicio/inicio.js';
 import { renderListaProductosPage } from './pages/lista-productos/listaProductos.js';
 import { renderAcercaPage, initAcercaPage } from './pages/acerca-de-nosotros/acerca.js';
-import { renderContactoPage } from './pages/contacto/contacto.js';
+import { renderContactoPage, initContactoPage } from './pages/contacto/contacto.js';
 import { renderLoginPage } from './pages/login/login.js';
-import { renderRegistroPage } from './pages/registro/registro.js';
+import { renderRegistroPage, initRegistroPage } from './pages/registro/registro.js';
+import { renderRegistroUsuarioPage, initRegistroUsuarioPage } from './pages/registro/registroUsuario.js';
 import { renderRegistroProfesionalPage } from './pages/registro-profesionales/registroProfesional.js';
 import { renderCrearPublicacionPage } from './pages/crear-publicacion/crearPublicacion.js';
 
@@ -15,9 +16,10 @@ const routes = {
     '#inicio': renderInicioPage,
     '#buscar': renderListaProductosPage,
     '#acerca': { render: renderAcercaPage, init: initAcercaPage },
-    '#contacto': renderContactoPage,
+    '#contacto': { render: renderContactoPage, init: initContactoPage },
     '#login': renderLoginPage,
-    '#registro': renderRegistroPage,
+    '#registro': { render: renderRegistroPage, init: initRegistroPage },
+    '#registro-usuario': { render: renderRegistroUsuarioPage, init: initRegistroUsuarioPage },
     '#registro-profesional': renderRegistroProfesionalPage,
     '#crear-publicacion': renderCrearPublicacionPage
 };
@@ -25,7 +27,7 @@ const routes = {
 function router() {
     const hash = window.location.hash || '#inicio';
     
-    // 1. Renderizar el contenido correspondiente de la ruta activa
+    
     const route = routes[hash];
     if (route) {
         if (typeof route === 'function') {
@@ -37,15 +39,15 @@ function router() {
             }
         }
     } else {
-        // Ruta no encontrada, redirigir a inicio
+        
         window.location.hash = '#inicio';
         return;
     }
 
-    // 2. Resaltar enlace activo en la barra de navegación
+    
     updateActiveNavLink(hash);
 
-    // 3. Cerrar el menú desplegable en móviles tras navegar
+    
     closeNavbarOnMobile();
 }
 
@@ -64,7 +66,7 @@ function updateActiveNavLink(currentHash) {
 function closeNavbarOnMobile() {
     const navbarCollapse = document.getElementById('navbarContent');
     if (navbarCollapse && navbarCollapse.classList.contains('show')) {
-        // Si bootstrap está disponible globalmente
+        
         if (window.bootstrap && window.bootstrap.Collapse) {
             const bsCollapse = window.bootstrap.Collapse.getInstance(navbarCollapse) || new window.bootstrap.Collapse(navbarCollapse);
             bsCollapse.hide();
@@ -75,3 +77,4 @@ function closeNavbarOnMobile() {
 // Escuchar cambios de ruta y carga inicial de la página
 window.addEventListener('hashchange', router);
 window.addEventListener('load', router);
+

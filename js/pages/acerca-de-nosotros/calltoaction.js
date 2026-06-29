@@ -1,10 +1,10 @@
 export function renderCallToAction() {
     return `
-        <section class="call-to-action py-5 px-3">
+        <section class="call-to-action pt-5 pb-0 px-3">
             <div class="container-fluid">
                 <div class="row align-items-center text-center text-md-start">
-                    <div class="col-12 col-md-3 d-flex justify-content-center justify-content-md-start">
-                        <img src="../assets/phone_FYNDR.svg" alt="Mockup Celular Fyndr" class="img-fluid phone">
+                    <div class="col-12 col-md-3 d-flex justify-content-center align-self-end">
+                        <img src="assets/phone_FYNDR.svg" alt="Mockup Celular Fyndr" class="img-fluid phone">
                     </div>
 
                     <div class="col-12 col-md-6 text-center mb-3 mb-md-0">
@@ -15,7 +15,7 @@ export function renderCallToAction() {
                     </div>
 
                     <div class="col-12 col-md-3">
-                        <div class="d-grid gap-2 col-10 col-md-12 mx-auto">
+                        <div class="d-grid gap-2 col-10 col-md-12 mx-auto pb-4">
                             <button type="button" id="btnBuscar"
                                 class="btn btn-outline-primary custom-btn d-flex align-items-center justify-content-center gap-2">
                                 <i class="bi bi-search"></i> Buscar servicio

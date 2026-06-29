@@ -1,11 +1,51 @@
 export function renderBanner() {
     return `
-        <!-- Lista de Productos - Sección: Banner (En desarrollo) -->
-        <section class="container my-5 py-4 text-center border-bottom">
-            <h2 class="subtitulo" style="font-size: 1.8rem; font-weight: 700; color: var(--azul-rey-profundo);">
-                Servicios - Banner (En Desarrollo)
-            </h2>
-            <p class="texto-regular text-muted">Aquí se mostrará el banner principal de la sección de servicios.</p>
+        <section class="banner-productos">
+
+           <div class="contenido-banner">
+                <div class="texto-banner">
+                    <h1>Nuestros servicios</h1>
+
+                    <p>
+                        Encuentra profesionales verificados y
+                        <br>
+                        calificados para cualquier trabajo en tu hogar
+                    </p>
+                </div>
+            </div>
+
+            <div class="buscador">
+                <div class="input-box">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input 
+                    type="text" 
+                    id="servicio"
+                    placeholder="¿Qué servicio necesitas?">
+
+                </div>
+
+                <div class="input-box">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <input 
+                    type="text"
+                    id="ubicacion"
+                    placeholder="Tu ubicación">
+
+                </div>
+
+                <button id="btnBuscar">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    Buscar
+
+                </button>
+            </div>
+
         </section>
+
     `;
 }

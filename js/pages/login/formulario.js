@@ -2,6 +2,7 @@ export function renderFormulario() {
     return `
         <!-- Login - Sección: Formulario (En desarrollo) -->
         <section class="container my-5 py-4 text-center">
+            
             <h2 class="subtitulo" style="font-size: 1.8rem; font-weight: 700; color: var(--azul-rey-profundo);">
                 Iniciar Sesión - Formulario (En Desarrollo)
             </h2>
