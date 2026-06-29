@@ -431,3 +431,18 @@
         font-size: 0.8rem;
     }
 }
+
+.publication {
+    display: flex;
+    flex-direction: row;
+}
+.infoService, .evidencias, .previa {
+    flex: 1;
+    margin: 10px;
+}
+.info, .evidencia, .vistaPrevia {
+    background-color: var(--azul-hielo-pastel);
+}
+.galery {
+    background-color: #ffffff93;
+}
