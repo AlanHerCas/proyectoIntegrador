@@ -111,19 +111,18 @@ export function initLogin() {
     const alertContainer = document.getElementById('login-formAlertContainer');
     const togglePassword = document.getElementById('login-togglePassword');
 
-    // 1. Almacenar usuario de prueba en LocalStorage (Codificado)
-    // Usamos btoa() para codificar strings en Base64
+    
     const seedMockUser = () => {
         const registeredUsers = JSON.parse(localStorage.getItem('registeredUsers') || '[]');
         
-        // Credenciales de prueba en texto plano: test@example.com / Password123!
+        
         const mockUser = {
             email: btoa('test@example.com'),
             contrasena: btoa('Password123!'),
             nombre: 'Usuario de Prueba'
         };
 
-        // Verificar si el usuario de prueba ya existe para no duplicarlo
+        
         const exists = registeredUsers.some(user => user.email === mockUser.email);
         if (!exists) {
             registeredUsers.push(mockUser);
@@ -131,10 +130,10 @@ export function initLogin() {
         }
     };
 
-    // Ejecutamos el sembrado de datos
+    
     seedMockUser();
 
-    // Extra: Funcionalidad del ojo para ver contraseña
+    
     if (togglePassword) {
         togglePassword.addEventListener('click', () => {
             const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
@@ -144,14 +143,14 @@ export function initLogin() {
         });
     }
 
-    // 2. Manejo del envío del formulario (Submit)
+    
     form.addEventListener('submit', (e) => {
         e.preventDefault();
 
         const emailVal = emailInput.value.trim();
         const passwordVal = passwordInput.value;
 
-        // Validaciones básicas de campos vacíos
+        
         if (!emailVal || !passwordVal) {
             alertContainer.innerHTML = `
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -162,15 +161,15 @@ export function initLogin() {
             return;
         }
 
-        // 3. Codificar los datos ingresados por el usuario para la comparación
+       
         const encodedEmail = btoa(emailVal);
         const encodedPassword = btoa(passwordVal);
 
-        // 4. Implementar autenticación verificando en el LocalStorage
+     
         const registeredUsers = JSON.parse(localStorage.getItem('registeredUsers') || '[]');
         const registeredUsersProfesional = JSON.parse(localStorage.getItem("registeredUsersProfesional")) || [];
         
-        // Buscamos un usuario cuyas credenciales codificadas coincidan
+        
         const userFound = registeredUsers.find(user => 
             user.email === encodedEmail && user.contrasena === encodedPassword
         );
@@ -180,7 +179,7 @@ export function initLogin() {
         );
 
         if (userFound) {
-            // Éxito: Guardamos la sesión activa (puedes decodificar el nombre para mostrarlo)
+            
             const activeUser = { nombre: userFound.nombre, email: emailVal };
             localStorage.setItem('currentUser', JSON.stringify(activeUser));
 
@@ -191,9 +190,7 @@ export function initLogin() {
                 </div>
             `;
             
-            // Aquí puedes redireccionar al usuario después de 1.5 segundos
-            // setTimeout(() => { window.location.href = 'dashboard.html'; }, 1500);
-            
+         
             form.reset();
         } else {
 
@@ -208,7 +205,7 @@ export function initLogin() {
                     </div>
                 `;
             }else{
-                // Error de credenciales
+               
             alertContainer.innerHTML = `
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
                     Correo electrónico o contraseña incorrectos.
