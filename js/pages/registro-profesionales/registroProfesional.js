@@ -517,6 +517,13 @@ else if (/^[2-9]0{9}$/.test(telefono)) {
     window.registroProfesionalState.pasoActual = pasoActual;
     renderPaso();
 } else {
+    const usuariosExistentes = JSON.parse(localStorage.getItem("registeredUsersProfesional")) || [];
+    const nuevoProfesional = { ...window.registroProfesionalState.datos };
+    nuevoProfesional.correo = btoa(nuevoProfesional.correo || "");
+    nuevoProfesional.password = btoa(nuevoProfesional.password || "");
+    delete nuevoProfesional.fotografiaFile;
+    usuariosExistentes.push(nuevoProfesional);
+    localStorage.setItem("registeredUsersProfesional", JSON.stringify(usuariosExistentes));
 
     const usuarioJSON = JSON.stringify(window.registroProfesionalState.datos);
 

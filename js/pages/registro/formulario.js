@@ -368,8 +368,8 @@ export function initFormulario() {
             const userModel = {
                 nombre: nameInput.value.trim(),
                 telefono: phoneInput.value.replace(/[\s\-\(\)]/g, ''),
-                email: emailInput.value.trim(),
-                contrasena: passwordInput.value
+                email: btoa(emailInput.value.trim()),
+                contrasena: btoa(passwordInput.value)
             };
             const jsonString = JSON.stringify(userModel, null, 2);
             localStorage.setItem('registeredUser', jsonString);
