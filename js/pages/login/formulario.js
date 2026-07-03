@@ -178,6 +178,13 @@ export function initLogin() {
             user.correo === encodedEmail && user.password ===encodedPassword
         );
 
+        const redirigirAInicio = () => {
+            setTimeout(() => {
+                
+                window.location.hash = '#inicio'; 
+            }, 1500); 
+        };
+
         if (userFound) {
             
             const activeUser = { nombre: userFound.nombre, email: emailVal };
@@ -192,6 +199,7 @@ export function initLogin() {
             
          
             form.reset();
+            redirigirAInicio(); 
         } else {
 
             if(userProFound){
@@ -204,6 +212,9 @@ export function initLogin() {
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 `;
+
+                form.reset(); 
+                redirigirAInicio(); 
             }else{
                
             alertContainer.innerHTML = `
