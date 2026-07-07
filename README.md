@@ -55,7 +55,7 @@ Hemos construido **FYNDR** utilizando tecnologías modernas y ligeras para asegu
 *   **Estructura:** HTML5 Semántico.
 *   **Diseño y Estilos:** CSS3 personalizado y **Bootstrap 5** (v5.3.3) para un diseño responsivo y moderno.
 *   **Interactividad:** Javascript Vanilla de última generación (módulos ES6) y **SweetAlert2** para alertas interactivas.
-*   **Base de Datos Relacional:** **MySQL/MariaDB** para almacenar la información de manera estructurada y segura.
+*   **Base de Datos Relacional:** **MySQL** para almacenar la información de manera estructurada y segura.
 *   **Enrutador Virtual:** Un Router en Javascript para gestionar el cambio de páginas de forma asíncrona mediante URLs con hashes (`#inicio`, `#buscar`, etc.).
 
 ---
@@ -78,29 +78,6 @@ En la carpeta [BD_Fyndr](file:///home/rousse/Documents/Curso-Java/FYNDR/BD_Fyndr
 
 ---
 
-## 🚀 Despliegue e Instalación Local
-
-Para correr **FYNDR** en tu computadora de forma local, sigue estos pasos:
-
-### 📋 Prerrequisitos
-*   Un navegador web moderno (Chrome, Edge, Firefox, Safari).
-*   Un servidor web local básico (por ejemplo, la extensión **Live Server** de VS Code o corriendo `npx serve` o `python -m http.server` en la terminal).
-*   Un servidor MySQL (como **XAMPP**, **WampServer** o una instalación nativa de MySQL).
-
-### 🖥️ Configuración del Frontend
-1.  Clona el repositorio en tu espacio local.
-2.  Inicia tu servidor web local apuntando a la raíz del proyecto.
-3.  Abre la dirección local indicada por tu servidor (generalmente `http://localhost:5500` o similar).
-
-### 🛢️ Configuración de la Base de Datos
-1.  Abre tu cliente de base de datos favorito (phpMyAdmin, DBeaver, MySQL Workbench, etc.).
-2.  Ejecuta secuencialmente los scripts de la carpeta `BD_Fyndr`:
-    *   Primero ejecuta `crear_tablas.sql` para generar la estructura de la base de datos `fyndr_db`.
-    *   Luego ejecuta `insertar_datos.sql` para poblar el sistema con información de prueba.
-    *   Finalmente ejecuta `seguridad_dcl.sql` si deseas configurar los perfiles de acceso.
-
----
-
 ## 👥 Nuestros Valores y Filosofía
 
 En **FYNDR** nos regimos bajo cuatro pilares indispensables:
@@ -112,3 +89,4 @@ En **FYNDR** nos regimos bajo cuatro pilares indispensables:
 ---
 
 *Desarrollado con pasión para brindar soluciones seguras al hogar.* 🏠✨
+
