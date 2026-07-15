@@ -3,7 +3,7 @@ import { renderInicioPage } from './pages/inicio/inicio.js';
 import { renderListaProductosPage } from './pages/lista-productos/listaProductos.js';
 import { renderAcercaPage, initAcercaPage } from './pages/acerca-de-nosotros/acerca.js';
 import { renderContactoPage, initContactoPage } from './pages/contacto/contacto.js';
-import { renderLoginPage } from './pages/login/login.js';
+import { renderLoginPage, initLoginPage } from './pages/login/login.js';
 import { renderRegistroPage, initRegistroPage } from './pages/registro/registro.js';
 import { renderRegistroUsuarioPage, initRegistroUsuarioPage } from './pages/registro/registroUsuario.js';
 import { renderRegistroProfesionalPage } from './pages/registro-profesionales/registroProfesional.js';
@@ -17,7 +17,7 @@ const routes = {
     '#buscar': renderListaProductosPage,
     '#acerca': { render: renderAcercaPage, init: initAcercaPage },
     '#contacto': { render: renderContactoPage, init: initContactoPage },
-    '#login': renderLoginPage,
+    '#login': {render: renderLoginPage, init: initLoginPage },
     '#registro': { render: renderRegistroPage, init: initRegistroPage },
     '#registro-usuario': { render: renderRegistroUsuarioPage, init: initRegistroUsuarioPage },
     '#registro-profesional': renderRegistroProfesionalPage,

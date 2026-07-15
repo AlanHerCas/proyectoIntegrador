@@ -192,17 +192,22 @@ export function initFormulario() {
 
     function validatePhone() {
         const cleanVal = phoneInput.value.replace(/[\s\-\(\)]/g, '');
-        if (phoneRegex.test(cleanVal)) {
-            phoneInput.classList.remove('is-invalid');
-            phoneInput.classList.add('is-valid');
-            phoneError.textContent = '';
-            return true;
-        } else {
+        if (!phoneRegex.test(cleanVal)) {
             phoneInput.classList.remove('is-valid');
             phoneInput.classList.add('is-invalid');
             phoneError.textContent = 'El teléfono debe tener 10 dígitos y comenzar con 2-9 (México).';
             return false;
         }
+        if (/(\d)\1\1/.test(cleanVal)) {
+            phoneInput.classList.remove('is-valid');
+            phoneInput.classList.add('is-invalid');
+            phoneError.textContent = 'El teléfono no puede tener más de 2 dígitos idénticos consecutivos.';
+            return false;
+        }
+        phoneInput.classList.remove('is-invalid');
+        phoneInput.classList.add('is-valid');
+        phoneError.textContent = '';
+        return true;
     }
 
     function validateEmail() {
@@ -363,8 +368,8 @@ export function initFormulario() {
             const userModel = {
                 nombre: nameInput.value.trim(),
                 telefono: phoneInput.value.replace(/[\s\-\(\)]/g, ''),
-                email: emailInput.value.trim(),
-                contrasena: passwordInput.value
+                email: btoa(emailInput.value.trim()),
+                contrasena: btoa(passwordInput.value)
             };
             const jsonString = JSON.stringify(userModel, null, 2);
             localStorage.setItem('registeredUser', jsonString);

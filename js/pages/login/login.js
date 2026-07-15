@@ -1,4 +1,4 @@
-import { renderFormulario } from './formulario.js';
+import { renderFormulario, initLogin} from './formulario.js';
 
 export function renderLoginPage() {
     return `
@@ -6,4 +6,8 @@ export function renderLoginPage() {
             ${renderFormulario()}
         </div>
     `;
+}
+
+export function initLoginPage(){
+    initLogin();
 }

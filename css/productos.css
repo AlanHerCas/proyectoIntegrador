@@ -114,6 +114,32 @@
     outline:none;
     font-size:15px;
 }
+.buscador .input-box i {
+    color: #333333 !important;
+}
+.buscador .input-box input {
+    color: #111111 !important;
+}
+.buscador .input-box input::-webkit-input-placeholder {
+    color: #444444 !important;
+    opacity: 1 !important;
+    font-weight: 400 !important;
+}
+.buscador .input-box input::-moz-placeholder {
+    color: #444444 !important;
+    opacity: 1 !important;
+    font-weight: 400 !important;
+}
+.buscador .input-box input:-ms-input-placeholder {
+    color: #444444 !important;
+    opacity: 1 !important;
+    font-weight: 400 !important;
+}
+.buscador .input-box input::placeholder {
+    color: #444444 !important;
+    opacity: 1 !important;
+    font-weight: 400 !important;
+}
 
 .buscador button{
     width:200px;
@@ -385,8 +411,9 @@
 @media(max-width:600px){
 
     .beneficios{
-        width:90%;
+        width:100%;
         grid-template-columns:1fr;
+        padding:30px 5%;
     }
 
     .beneficio{

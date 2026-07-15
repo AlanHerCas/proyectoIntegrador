@@ -43,11 +43,48 @@ p, .texto-regular {
     line-height: 1.6;
 }
 
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder,
+.input-custom::-webkit-input-placeholder,
+.form-field-group input::-webkit-input-placeholder,
+.form-field-group textarea::-webkit-input-placeholder {
+    color: #8fa4bc !important;
+    opacity: 1 !important;
+    font-weight: 400 !important;
+    font-family: var(--font-main) !important;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder,
+.input-custom::-moz-placeholder,
+.form-field-group input::-moz-placeholder,
+.form-field-group textarea::-moz-placeholder {
+    color: #8fa4bc !important;
+    opacity: 1 !important;
+    font-weight: 400 !important;
+    font-family: var(--font-main) !important;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder,
+.input-custom:-ms-input-placeholder,
+.form-field-group input:-ms-input-placeholder,
+.form-field-group textarea:-ms-input-placeholder {
+    color: #8fa4bc !important;
+    opacity: 1 !important;
+    font-weight: 400 !important;
+    font-family: var(--font-main) !important;
+}
+
 input::placeholder,
-textarea::placeholder {
-    font-family: var(--font-main);
-    font-weight: 100;
-    font-size: 0.9375rem;
+textarea::placeholder,
+.input-custom::placeholder,
+.form-field-group input::placeholder,
+.form-field-group textarea::placeholder {
+    color: #8fa4bc !important;
+    opacity: 1 !important;
+    font-weight: 400 !important;
+    font-family: var(--font-main) !important;
 }
 
 .btn-custom {
