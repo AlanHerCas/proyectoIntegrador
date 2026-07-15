@@ -20,21 +20,21 @@ export function renderPublicacion() {
 
                         <div class="mb-3">
                             <label class="form-label">Título del servicio</label>
-                            <input type="text" class="form-control"
+                            <input type="text" id="titulo-servicio" name="tituloServicio" class="form-control"
                                 placeholder="Ej. Instalación Eléctrica Residencial">
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label">Profesión o segmento</label>
-                            <select class="form-select">
-                                <option selected>Electricista</option>
+                            <select id="profesion-segmento" name="profesionSegmento" class="form-select">
+                                <option selected value="Electricista">Electricista</option>
                             </select>
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label">Categoría</label>
-                            <select class="form-select">
-                                <option selected>Electricista</option>
+                            <select id="categoria-servicio" name="categoriaServicio" class="form-select">
+                                <option selected value="Electricista">Electricista</option>
                             </select>
                         </div>
 
@@ -43,20 +43,20 @@ export function renderPublicacion() {
 
                             <div class="input-group">
                                 <span class="input-group-text">$</span>
-                                <input type="number" class="form-control" placeholder="500">
+                                <input type="number" id="precio-estimado" name="precioEstimado" class="form-control" placeholder="500">
                                 <span class="input-group-text">MXN</span>
                             </div>
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label">Zona de Servicio</label>
-                            <input type="text" class="form-control"
+                            <input type="text" id="zona-servicio" name="zonaServicio" class="form-control"
                                 placeholder="Ej. Ciudad de México, CDMX">
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label">Descripción del servicio</label>
-                            <textarea class="form-control" rows="6"
+                            <textarea id="descripcion-servicio" name="descripcionServicio" class="form-control" rows="6"
                                 placeholder="Describe tu servicio, materiales que utilizas, tiempo aproximado y beneficios..."></textarea>
                         </div>
 
@@ -82,7 +82,7 @@ export function renderPublicacion() {
                     <div class="card-body">
 
                         <!-- Upload -->
-                        <div class="border rounded text-center p-5 mb-4">
+                        <label for="evidencias-input" class="border rounded text-center p-5 mb-4 w-100" style="cursor: pointer;">
 
                             <i class="bi bi-cloud-arrow-up display-3"></i>
 
@@ -96,112 +96,15 @@ export function renderPublicacion() {
                                 Formatos: JPG, PNG (Máx 10MB)
                             </small>
 
-                        </div>
+                            <input type="file" id="evidencias-input" name="evidencias" class="d-none" accept="image/png,image/jpeg" multiple>
+
+                        </label>
 
                         <!-- Galería -->
-                        <div class="row g-3">
-
-                            <!-- Imagen -->
-                            <div class="col-4">
-                                <div class="galery rounded position-relative">
-
-                                    <button
-                                        class="btn btn-dark btn-sm rounded-circle position-absolute top-0 end-0 translate-middle p-1">
-                                        <i class="bi bi-x"></i>
-                                    </button>
-
-                                    <div
-                                        class="border rounded d-flex justify-content-center align-items-center"
-                                        style="height:100px;">
-                                        <i class="bi bi-image fs-1"></i>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <!-- Repetir -->
-                            <div class="col-4">
-                                <div class="galery position-relative rounded">
-
-                                    <button
-                                        class="btn btn-dark btn-sm rounded-circle position-absolute top-0 end-0 translate-middle p-1">
-                                        <i class="bi bi-x"></i>
-                                    </button>
-
-                                    <div
-                                        class="border rounded d-flex justify-content-center align-items-center"
-                                        style="height:100px;">
-                                        <i class="bi bi-image fs-1"></i>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div class="col-4">
-                                <div class="galery position-relative rounded">
-
-                                    <button
-                                        class="btn btn-dark btn-sm rounded-circle position-absolute top-0 end-0 translate-middle p-1">
-                                        <i class="bi bi-x"></i>
-                                    </button>
-
-                                    <div
-                                        class="border rounded d-flex justify-content-center align-items-center"
-                                        style="height:100px;">
-                                        <i class="bi bi-image fs-1"></i>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div class="col-4">
-                                <div class="galery position-relative rounded">
-
-                                    <button
-                                        class="btn btn-dark btn-sm rounded-circle position-absolute top-0 end-0 translate-middle p-1">
-                                        <i class="bi bi-x"></i>
-                                    </button>
-
-                                    <div
-                                        class="border rounded d-flex justify-content-center align-items-center"
-                                        style="height:100px;">
-                                        <i class="bi bi-image fs-1"></i>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div class="col-4">
-                                <div class="galery position-relative rounded">
-
-                                    <button
-                                        class="btn btn-dark btn-sm rounded-circle position-absolute top-0 end-0 translate-middle p-1">
-                                        <i class="bi bi-x"></i>
-                                    </button>
-
-                                    <div
-                                        class="border rounded d-flex justify-content-center align-items-center"
-                                        style="height:100px;">
-                                        <i class="bi bi-image fs-1"></i>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div class=" col-4">
-                                <div class="galery position-relative rounded">
-
-                                    <button
-                                        class="btn btn-dark btn-sm rounded-circle position-absolute top-0 end-0 translate-middle p-1">
-                                        <i class="bi bi-x"></i>
-                                    </button>
-
-                                    <div
-                                        class="border rounded d-flex justify-content-center align-items-center"
-                                        style="height:100px;">
-                                        <i class="bi bi-image fs-1"></i>
-                                    </div>
-
+                        <div id="evidencias-preview" class="row g-3">
+                            <div class="col-12">
+                                <div class="border rounded p-4 text-center text-muted bg-light">
+                                    Aún no se han seleccionado evidencias.
                                 </div>
                             </div>
 
@@ -236,15 +139,15 @@ export function renderPublicacion() {
                                     <i class="bi bi-image display-1"></i>
                                 </div>
 
-                                <h5>
+                                <h5 id="vista-previa-titulo">
                                     Instalación eléctrica residencial
                                 </h5>
 
-                                <h4 class="text-primary">
+                                <h4 id="vista-previa-precio" class="text-primary">
                                     Desde $500 MXN
                                 </h4>
 
-                                <p class="text-muted mt-3">
+                                <p id="vista-previa-descripcion" class="text-muted mt-3">
                                     Instalaciones eléctricas seguras y eficientes
                                     para hogares con materiales de alta calidad
                                     y con garantía incluida.

@@ -7,7 +7,7 @@ import { renderLoginPage } from './pages/login/login.js';
 import { renderRegistroPage, initRegistroPage } from './pages/registro/registro.js';
 import { renderRegistroUsuarioPage, initRegistroUsuarioPage } from './pages/registro/registroUsuario.js';
 import { renderRegistroProfesionalPage } from './pages/registro-profesionales/registroProfesional.js';
-import { renderCrearPublicacionPage } from './pages/crear-publicacion/crearPublicacion.js';
+import { renderCrearPublicacionPage, initCrearPublicacionPage } from './pages/crear-publicacion/crearPublicacion.js';
 
 const mainContent = document.getElementById('main-content');
 
@@ -21,7 +21,7 @@ const routes = {
     '#registro': { render: renderRegistroPage, init: initRegistroPage },
     '#registro-usuario': { render: renderRegistroUsuarioPage, init: initRegistroUsuarioPage },
     '#registro-profesional': renderRegistroProfesionalPage,
-    '#crear-publicacion': renderCrearPublicacionPage
+    '#crear-publicacion': { render: renderCrearPublicacionPage, init: initCrearPublicacionPage }
 };
 
 function router() {
