@@ -8,6 +8,10 @@ export function renderTutorial() {
                 <p class="texto-regular text-muted">Contratar ayuda confiable para tu hogar nunca había sido tan sencillo.</p>
             </div>
             
+            <div class="tutorial-video-container mb-5">
+                <video src="./assets/Tutorial_Fyndr.mp4" autoplay muted loop playsinline class="tutorial-video"></video>
+            </div>
+            
             <div class="tutorial-step-container mb-5">
                 <div class="tutorial-step">
                     <div class="tutorial-step-icon">1</div>

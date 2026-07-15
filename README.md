@@ -62,9 +62,9 @@ Hemos construido **FYNDR** utilizando tecnologías modernas y ligeras para asegu
 
 ## 🗄️ Estructura y Scripts de la Base de Datos (`BD_Fyndr`)
 
-En la carpeta [BD_Fyndr](file:///home/rousse/Documents/Curso-Java/FYNDR/BD_Fyndr) se encuentran los scripts SQL listos para levantar nuestro entorno de datos relacional:
+En la carpeta [BD_Fyndr](./BD_Fyndr) se encuentran los scripts SQL listos para levantar nuestro entorno de datos relacional:
 
-1.  **[crear_tablas.sql](file:///home/rousse/Documents/Curso-Java/FYNDR/BD_Fyndr/crear_tablas.sql):** Contiene la arquitectura lógica del sistema, incluyendo las siguientes tablas principales:
+1.  **[crear_tablas.sql](./BD_Fyndr/crear_tablas.sql):** Contiene la arquitectura lógica del sistema, incluyendo las siguientes tablas principales:
     *   `usuario_comun`: Datos de los clientes.
     *   `usuario_trabajador`: Información detallada, documentos de verificación y datos bancarios del profesional.
     *   `profesiones`: Catálogo oficial de oficios.
@@ -73,8 +73,8 @@ En la carpeta [BD_Fyndr](file:///home/rousse/Documents/Curso-Java/FYNDR/BD_Fyndr
     *   `resenas`: Puntuación de calidad.
     *   `mensajes`: Mensajería interna del chat.
     *   `favoritos`: Lista de profesionales destacados por cliente.
-2.  **[insertar_datos.sql](file:///home/rousse/Documents/Curso-Java/FYNDR/BD_Fyndr/insertar_datos.sql):** Inserta datos iniciales de prueba y semillas (seeders) para visualizar el funcionamiento de la plataforma de inmediato.
-3.  **[seguridad_dcl.sql](file:///home/rousse/Documents/Curso-Java/FYNDR/BD_Fyndr/seguridad_dcl.sql):** Define y gestiona los privilegios de los usuarios administradores y de aplicación de base de datos para asegurar el principio de menor privilegio en producción.
+2.  **[insertar_datos.sql](./BD_Fyndr/insertar_datos.sql):** Inserta datos iniciales de prueba y semillas (seeders) para visualizar el funcionamiento de la plataforma de inmediato.
+3.  **[seguridad_dcl.sql](./BD_Fyndr/seguridad_dcl.sql):** Define y gestiona los privilegios de los usuarios administradores y de aplicación de base de datos para asegurar el principio de menor privilegio en producción.
 
 ---
 

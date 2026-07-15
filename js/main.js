@@ -1,5 +1,5 @@
 import './navBar.js';
-import { renderInicioPage } from './pages/inicio/inicio.js';
+import { renderInicioPage, initInicioPage } from './pages/inicio/inicio.js';
 import { renderListaProductosPage } from './pages/lista-productos/listaProductos.js';
 import { renderAcercaPage, initAcercaPage } from './pages/acerca-de-nosotros/acerca.js';
 import { renderContactoPage, initContactoPage } from './pages/contacto/contacto.js';
@@ -13,7 +13,7 @@ const mainContent = document.getElementById('main-content');
 
 // Mapeo de rutas (hashes) a sus funciones coordinadoras de renderizado
 const routes = {
-    '#inicio': renderInicioPage,
+    '#inicio': { render: renderInicioPage, init: initInicioPage },
     '#buscar': renderListaProductosPage,
     '#acerca': { render: renderAcercaPage, init: initAcercaPage },
     '#contacto': { render: renderContactoPage, init: initContactoPage },

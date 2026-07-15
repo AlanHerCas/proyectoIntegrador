@@ -625,7 +625,7 @@ else if (/^[2-9]0{9}$/.test(telefono)) {
                             <p>En todo México</p>
                         </div>
 
-                        <img src="/assets/plomero.jpg" class="img-fluid mt-3">
+                        <img src="./assets/plomero.jpg" class="img-fluid mt-3">
                     </div>
                 </div>
 

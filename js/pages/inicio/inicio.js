@@ -11,3 +11,26 @@ export function renderInicioPage() {
         </div>
     `;
 }
+
+export function initInicioPage() {
+    const video = document.getElementById('hero-banner-video');
+    if (video) {
+        video.loop = true;
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    video.play().catch(error => {
+                        console.log("Autoplay was prevented: ", error);
+                    });
+                } else {
+                    video.pause();
+                }
+            });
+        }, {
+            threshold: 0.15
+        });
+
+        observer.observe(video);
+    }
+}

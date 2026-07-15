@@ -1,18 +1,21 @@
 .hero-section {
     background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
-    padding: 5rem 20px;
+    padding: 5rem 20px 5rem 20px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    gap: 40px;
+    gap: 3rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     border-radius: 0 0 40px 40px;
     margin-bottom: 4rem;
 }
 
 .hero-content {
-    flex: 1;
-    max-width: 600px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
 }
 
 .hero-title {
@@ -38,6 +41,7 @@
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .hero-btn-primary {
@@ -75,16 +79,36 @@
     background: var(--azul-hielo-pastel);
 }
 
-.hero-image {
-    flex: 1;
+.hero-video-container {
+    width: 100%;
     display: flex;
     justify-content: center;
+    margin-top: 1rem;
 }
 
-.hero-image img {
-    max-width: 100%;
+.hero-video {
+    width: 100%;
+    max-width: 680px;
     height: auto;
     border-radius: 20px;
+    border: 5px solid #ffffff;
+    box-shadow: 0 12px 30px rgba(44, 94, 173, 0.15);
+}
+
+.tutorial-video-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 3.5rem;
+}
+
+.tutorial-video {
+    width: 100%;
+    max-width: 720px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e5e7eb;
 }
 
 .inicio-categorias-grid {
@@ -224,25 +248,21 @@
 
 @media (max-width: 992px) {
     .hero-section {
-        flex-direction: column;
-        padding: 3.5rem 20px;
-        text-align: center;
+        padding: 3rem 15px 3.5rem 15px;
+        gap: 2rem;
     }
     
     .hero-content {
         max-width: 100%;
+        padding: 0;
     }
     
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
     
     .hero-buttons {
         justify-content: center;
-    }
-    
-    .hero-image {
-        display: none;
     }
     
     .tutorial-step-container {
